@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS for animations and transitions */
+        .nav-link {
+            position: relative;
+            display: inline-block;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #06b6d4; /* Teal accent color */
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .page-transition {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .page-transition.fade-out {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .container {
+            max-width: 1200px; /* Increased max-width for better layout on larger screens */
+            margin-left: auto; /* Ensure horizontal centering */
+            margin-right: auto;
+            padding-left: 1rem;  /* Add some padding for smaller screens */
+            padding-right: 1rem;
+        }
+
+        .section {
+            margin-top: 3rem; /* Increased spacing between sections */
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.25rem; /* Larger font size for titles */
+            font-weight: 600;
+            color: #1e293b; /* Slightly darker heading color */
+            margin-bottom: 1.5rem;
+            text-align: center; /* Center heading */
+        }
+
+        .text-content {
+            font-size: 1.1rem; /* Slightly larger body text */
+            color: #4b5563; /* Slightly darker body color */
+            line-height: 1.75;  /* Improved line height for readability */
+        }
+
+        .list-disc {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .list-inside {
+            list-style-position: inside;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        .footer {
+            background-color: #f3f4f6; /* Lighter footer background */
+            color: #4b5563;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin-top: 4rem; /* Increased margin above footer */
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-inter">
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-semibold">WebDev Career Hub</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="trainees.html" class="nav-link">Trainees</a></li>
+                    <li><a href="apply.html" class="nav-link">Apply</a></li>
+                    <li><a href="courses.html" class="nav-link">Courses</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-transition">
+        <section class="text-center section">
+            <h2 class="section-title">About Us</h2>
+            <p class="text-content">
+                WebDev Career Hub is dedicated to connecting talented web development trainees with exciting career opportunities. We bridge the gap between education and employment, helping you launch your dream career.
+            </p>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Our Mission</h3>
+            <p class="text-content">
+                Our mission is to empower aspiring web developers by providing them with the resources, support, and connections they need to succeed in the industry. We strive to:
+            </p>
+            <ul class="list-disc list-inside text-content">
+                <li>Facilitate the transition from training to employment.</li>
+                <li>Connect companies with skilled and motivated trainees.</li>
+                <li>Offer ongoing support and career development resources.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Company Values</h3>
+            <p class="text-content">
+                We are guided by the following values:
+            </p>
+            <ul class="list-disc list-inside text-content">
+                <li><b>Excellence:</b> We strive for the highest standards in everything we do.</li>
+                <li><b>Collaboration:</b> We believe in the power of working together.</li>
+                <li><b>Integrity:</b> We act with honesty and transparency.</li>
+                <li><b>Innovation:</b> We embrace new ideas and approaches.</li>
+                <li><b>Support:</b> We are committed to supporting our trainees and partners.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">&copy; 2025 WebDev Career Hub By Adrian. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Simple page transition script
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainContent = document.querySelector('.page-transition');
+
+            // Simulate page navigation
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const href = event.target.getAttribute('href');
+
+                    mainContent.classList.add('fade-out');
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // Match the CSS transition time
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS for animations and transitions */
+        .nav-link {
+            position: relative;
+            display: inline-block;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #06b6d4; /* Teal accent color */
+            transition: width 0.3s ease-in-out;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+         .page-transition {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .page-transition.fade-out {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-inter">
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-semibold">WebDev Career Hub</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="trainees.html" class="nav-link">Trainees</a></li>
+                    <li><a href="apply.html" class="nav-link">Apply</a></li>
+                    <li><a href="courses.html" class="nav-link">Courses</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8 page-transition">
+        <section class="text-center">
+            <h2 class="text-3xl font-semibold text-blue-700 mb-4">Available Courses</h2>
+            <p class="text-gray-700 mb-6">
+                Enhance your web development skills with our comprehensive courses.
+            </p>
+        </section>
+
+        <section class="mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">React Fundamentals</h4>
+                    <p class="text-gray-600 mb-4">Learn the basics of React development and build interactive UIs.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
+                        <li>Introduction to React</li>
+                        <li>Component lifecycle</li>
+                        <li>State management</li>
+                        <li>React Hooks</li>
+                    </ul>
+                    <p class="text-blue-500 font-semibold">Duration: 8 weeks</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Full Stack Development with Node.js</h4>
+                    <p class="text-gray-600 mb-4">Build complete web applications with front-end and back-end technologies.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
+                        <li>Node.js and Express</li>
+                        <li>Database design with PostgreSQL</li>
+                        <li>RESTful API development</li>
+                        <li>Front-end integration</li>
+                    </ul>
+                    <p class="text-blue-500 font-semibold">Duration: 12 weeks</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Mastering .NET</h4>
+                    <p class="text-gray-600 mb-4">Learn .NET framework for building robust web applications.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
+                        <li>Introduction to .NET</li>
+                        <li>ASP.NET Core</li>
+                        <li>Entity Framework</li>
+                        <li>Web API development</li>
+                    </ul>
+                    <p class="text-blue-500 font-semibold">Duration: 10 weeks</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Front-End Development with Vue.js</h4>
+                    <p class="text-gray-600 mb-4">Create dynamic and engaging user interfaces with Vue.js.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
+                        <li>Vue.js fundamentals</li>
+                        <li>Component-based architecture</li>
+                         <li>Vue Router</li>
+                         <li>State Management with Vuex</li>
+                    </ul>
+                    <p class="text-blue-500 font-semibold">Duration: 8 weeks</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Python for Web Development</h4>
+                    <p class="text-gray-600 mb-4">Learn to build web applications using Python and Django framework.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
+                        <li>Introduction to Python</li>
+                        <li>Django framework</li>
+                        <li>Database interaction</li>
+                        <li>Building RESTful APIs</li>
+                    </ul>
+                    <p class="text-blue-500 font-semibold">Duration: 12 weeks</p>
+                </div>
+                 <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Mobile App Development with React Native</h4>
+                    <p class="text-gray-600 mb-4">Build cross-platform mobile applications using React Native.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
+                        <li>React Native basics</li>
+                        <li>Building cross-platform apps</li>
+                        <li>Mobile UI design</li>
+                        <li>State management</li>
+                    </ul>
+                    <p class="text-blue-500 font-semibold">Duration: 10 weeks</p>
+                </div>
+            </div>
+             <div class="mt-8 text-center">
+                <a href="apply.html" class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out">Apply Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-200 text-gray-700 py-4 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 WebDev Career Hub By Adrian. All rights reserved.</p>
+        </div>
+    </footer>
+     <script>
+        // Simple page transition script
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainContent = document.querySelector('.page-transition');
+            
+            // Simulate page navigation
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const href = event.target.getAttribute('href');
+                    
+                    mainContent.classList.add('fade-out');
+                    
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // Match the CSS transition time
+                });
+            });
+        });
+    </script>
+</body>
+</html>
